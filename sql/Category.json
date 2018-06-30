@@ -1,0 +1,23 @@
+[
+  {
+    "name":"id",
+    "type":"Integer",
+    "isIndex":false,
+    "isNull":true,
+    "defaultValue":null
+  },
+  {
+    "name":"categoryName",
+    "type":"String",
+    "isIndex":true,
+    "isNull":false,
+    "defaultValue":null
+  },
+  {
+    "name":"isDelete",
+    "type":"Integer",
+    "isIndex":false,
+    "isNull":false,
+    "defaultValue":null
+  }
+]

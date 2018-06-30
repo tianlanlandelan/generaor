@@ -1,0 +1,48 @@
+package ${myUtil.rootPackageName}.${myUtil.packageName}.service.impl;
+
+import ${myUtil.rootPackageName}.${myUtil.packageName}.dao.I${myUtil.entityClassName}Dao;
+import ${myUtil.rootPackageName}.${myUtil.packageName}.entity.${myUtil.entityClassName};
+import ${myUtil.rootPackageName}.${myUtil.packageName}.service.I${myUtil.entityClassName}Service;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+@Service
+public class ${myUtil.entityClassName}ServiceImpl implements I${myUtil.entityClassName}Service {
+
+    @Autowired
+    private I${myUtil.entityClassName}Dao ${myUtil.entityName}DaoImpl;
+
+    public ${myUtil.entityClassName} insert(${myUtil.entityClassName} ${myUtil.entityName}) {
+        return ${myUtil.entityName}DaoImpl.insert(${myUtil.entityName});
+    }
+
+    public ${myUtil.entityClassName} update(${myUtil.entityClassName} ${myUtil.entityName}) {
+        return ${myUtil.entityName}DaoImpl.update(${myUtil.entityName});
+    }
+
+    public void deleteById(String id) {
+        ${myUtil.entityName}DaoImpl.deleteById(id);
+    }
+
+    public List<${myUtil.entityClassName}> getList() {
+        return ${myUtil.entityName}DaoImpl.getList();
+    }
+
+    public ${myUtil.entityClassName} getById(String id) {
+        return ${myUtil.entityName}DaoImpl.getById(id);
+    }
+    <%
+           for(attr in myUtil.list){
+             if(attr.isIndex){
+             println("     public List<" + myUtil.entityClassName + "> getBy" + strutil.toUpperCase(strutil.subStringTo(attr.name,0,1)) + strutil.subString(attr.name,1) + "(" + attr.type + " " + attr.name + "){"  );
+             println("        return " + myUtil.entityName + "DaoImpl.getBy" + strutil.toUpperCase(strutil.subStringTo(attr.name,0,1)) + strutil.subString(attr.name,1) + "(" + attr.name + ");");
+             println("     }");
+             println("     public void deleteBy" + strutil.toUpperCase(strutil.subStringTo(attr.name,0,1)) + strutil.subString(attr.name,1) + "(" + attr.type + " " + attr.name + "){"  );
+             println(         myUtil.entityName + "DaoImpl.deleteBy" + strutil.toUpperCase(strutil.subStringTo(attr.name,0,1)) + strutil.subString(attr.name,1) + "(" + attr.name + ");");
+             println("     }");
+            }
+          }
+      %>
+}

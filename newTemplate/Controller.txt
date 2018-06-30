@@ -1,0 +1,53 @@
+package ${myUtil.rootPackageName}.controller;
+
+import ${myUtil.rootPackageName}.entity.${myUtil.entityClassName};
+import ${myUtil.rootPackageName}.service.${myUtil.entityClassName}Service;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+
+import javax.annotation.Resource;
+import java.util.List;
+
+@RestController
+@RequestMapping("/${myUtil.entityName}")
+public class ${myUtil.entityClassName}Controller {
+    private Logger logger = LoggerFactory.getLogger(${myUtil.entityClassName}Controller.class);
+
+    @Resource
+    private ${myUtil.entityClassName}Service ${myUtil.entityName}Service;
+
+    @RequestMapping(value = "/getById",method = RequestMethod.GET)
+    ResponseEntity getById(String id){
+        ${myUtil.entityClassName} result = ${myUtil.entityName}Service.getById(id);
+        return ResponseEntity.ok(result);
+    }
+
+    @RequestMapping(value = "/getAll",method = RequestMethod.GET)
+    ResponseEntity getAll(){
+        List<${myUtil.entityClassName}> result = ${myUtil.entityName}Service.getAll();
+        return ResponseEntity.ok(result);
+    }
+
+    @RequestMapping(value = "/insert",method = RequestMethod.POST)
+    ResponseEntity insert(${myUtil.entityClassName} ${myUtil.entityName}){
+        Integer result = ${myUtil.entityName}Service.insert(${myUtil.entityName});
+        return ResponseEntity.ok(result);
+    }
+
+    @RequestMapping(value = "/deleteById",method = RequestMethod.DELETE)
+    ResponseEntity deleteById(String id){
+        Integer result = ${myUtil.entityName}Service.deleteById(id);
+        return ResponseEntity.ok(result);
+    }
+
+    @RequestMapping(value = "/update",method = RequestMethod.PUT)
+    ResponseEntity update(${myUtil.entityClassName} ${myUtil.entityName}){
+        Integer result = ${myUtil.entityName}Service.update(${myUtil.entityName});
+        return ResponseEntity.ok(result);
+    }
+
+}

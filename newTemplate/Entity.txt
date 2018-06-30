@@ -1,0 +1,44 @@
+package ${myUtil.rootPackageName}.entity;
+
+import java.util.Date;
+import java.util.List;
+
+public class ${myUtil.entityClassName} {
+<%
+    for(attr in myUtil.list){
+        if(attr.description != null){
+            println("    /**");
+            println("    * " + attr.description);
+            println("    */");
+         }
+        if(attr.defaultValue == null){
+            println("     private " + attr.type + " " + attr.name + ";");
+        }else{
+            println("     private " + attr.type + " " + attr.name + " = " + attr.defaultValue + ";");
+        }
+
+    }
+     for(attr in myUtil.list){
+        println("     public " + attr.type + " get" + strutil.toUpperCase(strutil.subStringTo(attr.name,0,1)) + strutil.subString(attr.name,1) + "(){");
+        println("           return this." + attr.name + ";");
+        println("     }");
+        println("     public void set" + strutil.toUpperCase(strutil.subStringTo(attr.name,0,1)) + strutil.subString(attr.name,1) + "(" + attr.type + " " + attr.name + "){");
+        println("           this." + attr.name + " = " + attr.name + ";");
+        println("     }");
+    }
+%>
+
+
+@Override
+    public String toString() {
+        return "${myUtil.entityClassName}{" +
+                <%
+                    print("            ");
+                    for(attr in myUtil.list){
+                        print('"  ' + attr.name + ':" + ' + attr.name + " + ");
+                    }
+                %>
+
+        "}";
+    }
+  }

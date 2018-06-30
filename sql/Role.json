@@ -1,0 +1,34 @@
+[
+  {
+    "name":"id",
+    "type":"String",
+    "isIndex":false,
+    "isNull":true,
+    "defaultValue":null,
+    "description":"角色ID"
+  },
+  {
+    "name":"roleName",
+    "type":"String",
+    "isIndex":true,
+    "isNull":false,
+    "defaultValue":null,
+    "description":"角色名称"
+  },
+  {
+    "name":"nodeIds",
+    "type":"String",
+    "isIndex":false,
+    "isNull":true,
+    "defaultValue":null,
+    "description":"角色功能ID"
+  },
+  {
+    "name":"description",
+    "type":"String",
+    "isIndex":false,
+    "isNull":false,
+    "defaultValue":null,
+    "description":"角色描述"
+  }
+]

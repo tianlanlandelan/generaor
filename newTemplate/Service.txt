@@ -1,0 +1,35 @@
+package ${myUtil.rootPackageName}.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import ${myUtil.rootPackageName}.entity.${myUtil.entityClassName};
+import ${myUtil.rootPackageName}.mapper.${myUtil.entityClassName}Mapper;
+import java.util.List;
+
+@Service
+public class ${myUtil.entityClassName}Service {
+    @Autowired
+    private ${myUtil.entityClassName}Mapper ${myUtil.entityName}Mapper;
+
+    public ${myUtil.entityClassName} getById(String id){
+        return ${myUtil.entityName}Mapper.getById(id);
+    }
+
+    public List<${myUtil.entityClassName}> getAll(){
+        return ${myUtil.entityName}Mapper.getAll();
+    }
+
+    public Integer insert(${myUtil.entityClassName} ${myUtil.entityName}){
+        return ${myUtil.entityName}Mapper.insert(${myUtil.entityName});
+    }
+
+    public Integer deleteById(String id){
+        return ${myUtil.entityName}Mapper.deleteById(id);
+    }
+
+    public Integer update(${myUtil.entityClassName} ${myUtil.entityName}){
+        return ${myUtil.entityName}Mapper.update(${myUtil.entityName});
+    }
+
+
+}

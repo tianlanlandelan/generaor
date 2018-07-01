@@ -2,6 +2,7 @@
 请注意：
    1.必须有id字段
    2.id字段固定格式：
+   ```json
         {
           "name":"id",
           "type":"String",
@@ -10,8 +11,9 @@
           "defaultValue":null,
           "description":"id"
         }
-
+   ```
 Json格式如下：
+```json
 [
     {
       "name":"id",               //name，标记字段名
@@ -37,6 +39,7 @@ Json格式如下：
       "defaultValue":"\"男\"",
       "description":"性别"
     }
-    ...
-    ...
+    ......
+    ......
  ]
+```

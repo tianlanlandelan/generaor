@@ -11,7 +11,13 @@ public class ${myUtil.entityClassName}Service {
     @Autowired
     private ${myUtil.entityClassName}Mapper ${myUtil.entityName}Mapper;
 
-    public ${myUtil.entityClassName} getById(String id){
+    public ${myUtil.entityClassName} getById(<%
+        for(attr in myUtil.list){
+            if(attr.name == "id")
+                print(attr.type);
+        }
+    %> id){
+
         return ${myUtil.entityName}Mapper.getById(id);
     }
 
@@ -23,7 +29,13 @@ public class ${myUtil.entityClassName}Service {
         return ${myUtil.entityName}Mapper.insert(${myUtil.entityName});
     }
 
-    public Integer deleteById(String id){
+    public Integer deleteById(<%
+        for(attr in myUtil.list){
+            if(attr.name == "id")
+                print(attr.type);
+        }
+    %> id){
+
         return ${myUtil.entityName}Mapper.deleteById(id);
     }
 

@@ -21,8 +21,7 @@ public class RoleController {
     private RoleService roleService;
 
     @RequestMapping(value = "/getById",method = RequestMethod.GET)
-    ResponseEntity getById(String id){
-        Role result = roleService.getById(id);
+    ResponseEntity getById(String id){        Role result = roleService.getById(id);
         return ResponseEntity.ok(result);
     }
 
@@ -39,8 +38,7 @@ public class RoleController {
     }
 
     @RequestMapping(value = "/deleteById",method = RequestMethod.DELETE)
-    ResponseEntity deleteById(String id){
-        Integer result = roleService.deleteById(id);
+    ResponseEntity deleteById(String id){        Integer result = roleService.deleteById(id);
         return ResponseEntity.ok(result);
     }
 

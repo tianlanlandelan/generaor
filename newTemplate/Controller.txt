@@ -21,7 +21,12 @@ public class ${myUtil.entityClassName}Controller {
     private ${myUtil.entityClassName}Service ${myUtil.entityName}Service;
 
     @RequestMapping(value = "/getById",method = RequestMethod.GET)
-    ResponseEntity getById(String id){
+    ResponseEntity getById(<%
+        for(attr in myUtil.list){
+            if(attr.name == "id")
+                print(attr.type);
+        }
+    %> id){
         ${myUtil.entityClassName} result = ${myUtil.entityName}Service.getById(id);
         return ResponseEntity.ok(result);
     }
@@ -39,7 +44,12 @@ public class ${myUtil.entityClassName}Controller {
     }
 
     @RequestMapping(value = "/deleteById",method = RequestMethod.DELETE)
-    ResponseEntity deleteById(String id){
+    ResponseEntity deleteById(<%
+        for(attr in myUtil.list){
+            if(attr.name == "id")
+                print(attr.type);
+        }
+    %> id){
         Integer result = ${myUtil.entityName}Service.deleteById(id);
         return ResponseEntity.ok(result);
     }

@@ -24,7 +24,6 @@ public interface RoleMapper {
 
      @Delete("DELETE FROM " + tableName + " WHERE id = #{id}")
      Integer deleteById(String id);
-
      @Update("UPDATE " + tableName + " SET roleName=#{roleName}, nodeIds=#{nodeIds}, description=#{description} WHERE id = #{id}")
      Integer update(Role role);
 

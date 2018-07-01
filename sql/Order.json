@@ -1,7 +1,7 @@
 [
   {
     "name":"id",
-    "type":"String",
+    "type":"Integer",
     "isIndex":false,
     "isNull":true,
     "defaultValue":null

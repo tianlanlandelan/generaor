@@ -23,7 +23,12 @@ public interface ${myUtil.entityClassName}Mapper {
         }
      %> FROM " + tableName + " WHERE id = #{id}")
 
-     ${myUtil.entityClassName} getById(String Id);
+     ${myUtil.entityClassName} getById(<%
+         for(attr in myUtil.list){
+             if(attr.name == "id")
+                 print(attr.type);
+         }
+     %> Id);
 
      @Select("SELECT <%
         for(attr in myUtil.list)
@@ -56,7 +61,12 @@ public interface ${myUtil.entityClassName}Mapper {
      Integer insert(${myUtil.entityClassName} ${myUtil.entityName});
 
      @Delete("DELETE FROM " + tableName + " WHERE id = #{id}")
-     Integer deleteById(String id);
+     Integer deleteById(<%
+         for(attr in myUtil.list){
+             if(attr.name == "id")
+                 print(attr.type);
+         }
+     %> id);
 
      @Update("UPDATE " + tableName + " SET <%
         for(attr in myUtil.list){

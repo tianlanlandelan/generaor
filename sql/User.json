@@ -1,7 +1,7 @@
 [
     {
       "name":"id",
-      "type":"String",
+      "type":"Integer",
       "isIndex":false,
       "isNull":true,
       "defaultValue":null
@@ -32,13 +32,6 @@
       "type":"String",
       "isIndex":true,
       "isNull":false,
-      "defaultValue":null
-    },
-    {
-      "name":"roleIds",
-      "type":"List<String>",
-      "isIndex":false,
-      "isNull":true,
       "defaultValue":null
     }
   ]

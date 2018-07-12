@@ -4,34 +4,63 @@
       "type":"Integer",
       "isIndex":false,
       "isNull":true,
-      "defaultValue":null
+      "defaultValue":null,
+      "description":"id"
+    },
+    {
+      "name":"userName",
+      "type":"String",
+      "isIndex":true,
+      "isNull":false,
+      "defaultValue":null,
+      "description":"用户名,不重复，默认为手机号，可用于登录"
     },
     {
       "name":"phone",
       "type":"String",
+      "isIndex":false,
+      "isNull":false,
+      "defaultValue":null,
+      "description":"手机号，不重复，可用于登录"
+    },
+    {
+      "name":"wxId",
+      "type":"String",
+      "isIndex":false,
+      "isNull":true,
+      "defaultValue":null,
+      "description":"微信号，不重复，可用于登录"
+    },
+    {
+      "name":"email",
+      "type":"String",
       "isIndex":true,
       "isNull":false,
-      "defaultValue":null
+      "defaultValue":null,
+      "description":"邮箱，不重复，可用于登录"
     },
     {
       "name":"password",
       "type":"String",
-      "isIndex":false,
+      "isIndex":true,
       "isNull":false,
-      "defaultValue":null
+      "defaultValue":null,
+      "description":"密码"
     },
     {
       "name":"createTime",
       "type":"Date",
-      "isIndex":false,
-      "isNull":true,
-      "defaultValue":null
-    },
-    {
-      "name":"type",
-      "type":"String",
       "isIndex":true,
       "isNull":false,
-      "defaultValue":null
+      "defaultValue":"new Date()",
+      "description":"创建时间"
+    },
+    {
+      "name":"mask",
+      "type":"Long",
+      "isIndex":true,
+      "isNull":false,
+      "defaultValue":null,
+      "description":"掩码值，用来表示一系列开关（如：是否开启用户名登录、是否已删除、是否开启邮箱登录等）"
     }
   ]

@@ -21,6 +21,16 @@ public class ${myUtil.entityClassName}Service {
         return ${myUtil.entityName}Mapper.getById(id);
     }
 
+ <% for(attr in myUtil.list){
+        if(attr.isIndex == true&&attr.name!='id'){  %>
+    public ${myUtil.entityClassName} getBy${attr.camelCaseName}(${attr.type} ${attr.name}){
+        return ${myUtil.entityName}Mapper.getBy${attr.camelCaseName}(${attr.name});
+    }
+  <%    }
+    }   %>
+
+
+
     public List<${myUtil.entityClassName}> getAll(){
         return ${myUtil.entityName}Mapper.getAll();
     }

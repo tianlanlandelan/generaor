@@ -5,11 +5,20 @@ package beetl;
  */
 public class MongoFields {
     private String name;
+    private String camelCaseName;               //驼峰命名
     private String type;
     private boolean isIndex;
     private boolean isNull;
     private String description;
     private Object defaultValue;
+
+    public String getCamelCaseName() {
+        return camelCaseName;
+    }
+
+    public void setCamelCaseName(String camelCaseName) {
+        this.camelCaseName = camelCaseName;
+    }
 
     public String getName() {
         return name;

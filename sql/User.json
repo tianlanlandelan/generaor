@@ -2,7 +2,7 @@
     {
       "name":"id",
       "type":"Integer",
-      "isIndex":false,
+      "isIndex":true,
       "isNull":true,
       "defaultValue":null,
       "description":"id"
@@ -18,7 +18,7 @@
     {
       "name":"phone",
       "type":"String",
-      "isIndex":false,
+      "isIndex":true,
       "isNull":false,
       "defaultValue":null,
       "description":"手机号，不重复，可用于登录"
@@ -26,7 +26,7 @@
     {
       "name":"wxId",
       "type":"String",
-      "isIndex":false,
+      "isIndex":true,
       "isNull":true,
       "defaultValue":null,
       "description":"微信号，不重复，可用于登录"
@@ -42,7 +42,7 @@
     {
       "name":"password",
       "type":"String",
-      "isIndex":true,
+      "isIndex":false,
       "isNull":false,
       "defaultValue":null,
       "description":"密码"
@@ -50,7 +50,7 @@
     {
       "name":"createTime",
       "type":"Date",
-      "isIndex":true,
+      "isIndex":false,
       "isNull":false,
       "defaultValue":"new Date()",
       "description":"创建时间"
@@ -58,7 +58,7 @@
     {
       "name":"mask",
       "type":"Long",
-      "isIndex":true,
+      "isIndex":false,
       "isNull":false,
       "defaultValue":null,
       "description":"掩码值，用来表示一系列开关（如：是否开启用户名登录、是否已删除、是否开启邮箱登录等）"

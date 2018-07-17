@@ -2,3 +2,7 @@
 /target
 
 /src/main/config/myBeetl.properties
+
+
+*.iml
+

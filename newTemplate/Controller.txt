@@ -33,6 +33,21 @@ public class ${myUtil.entityClassName}Controller {
         return ResponseEntity.ok().contentType(MediaType.APPLICATION_JSON).body(result);
     }
 
+ <% for(attr in myUtil.list){
+       if(attr.isIndex == true&&attr.name!='id'){  %>
+    @RequestMapping(value = "/getBy${attr.camelCaseName}",method = RequestMethod.GET)
+    ResponseEntity getBy${attr.camelCaseName}(${attr.type} ${attr.name}){
+        ${myUtil.entityClassName} result = ${myUtil.entityName}Service.getBy${attr.camelCaseName}(${attr.name});
+        return ResponseEntity.ok().contentType(MediaType.APPLICATION_JSON).body(result);
+    }
+
+
+   <%   }
+    } %>
+
+
+
+
     @RequestMapping(value = "/getAll",method = RequestMethod.GET)
     ResponseEntity getAll(){
         List<${myUtil.entityClassName}> result = ${myUtil.entityName}Service.getAll();

@@ -19,11 +19,14 @@ public class BeetlUtils {
     public static void main(String[] args){
 
         try{
-            MyTemplate myTemplate = new MyTemplate();
+//          加载配置文件
             String dir = System.getProperty("user.dir") + File.separator + "src" + File.separator + "main" + File.separator + "config" + File.separator;
             String fileName = "myBeetl.properties";
             Properties properties = new Properties();
             properties.load(new FileInputStream(dir + fileName));
+            //构建模板对象
+            MyTemplate myTemplate = new MyTemplate();
+
             /*
             设置公共属性：实体类名，模块包名
              */
@@ -32,12 +35,12 @@ public class BeetlUtils {
             myTemplate.setEntityClassName(properties.getProperty("EntityClassName"));
             myTemplate.setEntityName(properties.getProperty("EntityName"));
             myTemplate.setPackageName(properties.getProperty("PackageName"));
+            myTemplate.setCollectionName(properties.getProperty("CollectionName"));
+            myTemplate.setList(getMongFieldList(properties.getProperty("SqlFile")));
 
             /*
             设置Entity属性，生成Entity
              */
-            myTemplate.setCollectionName(properties.getProperty("CollectionName"));
-            myTemplate.setList(getMongFieldList(properties.getProperty("SqlFile")));
             myTemplate.setTemplateName("Entity.txt");
             createEntity(myTemplate);
 
@@ -129,6 +132,7 @@ public class BeetlUtils {
             mongoFields.setNull((Boolean) map.get("isNull"));
             mongoFields.setIndex((Boolean)map.get("isIndex"));
             mongoFields.setDefaultValue(map.get("defaultValue"));
+            mongoFields.setCamelCaseName(map.get("name").toString().substring(0, 1).toUpperCase() + map.get("name").toString().substring(1));
             if(map.get("description") != null)
             mongoFields.setDescription(map.get("description").toString());
             mongoFieldsList.add(mongoFields);

@@ -30,6 +30,25 @@ public interface ${myUtil.entityClassName}Mapper {
          }
      %> Id);
 
+<% for(attr_p in myUtil.list){
+        if(attr_p.isIndex == true&&attr_p.name!='id'){  %>
+
+@Select("SELECT <%
+        for(attr in myUtil.list)
+        {
+            if(attrLP.last)
+                print(attr.name);
+            else
+                print(attr.name + ", ");
+        }
+     %> FROM " + tableName + " WHERE ${attr_p.name} = #{${attr_p.name}}")
+
+     ${myUtil.entityClassName} getBy${attr_p.camelCaseName}(${attr_p.type} ${attr_p.name});
+
+  <%    }
+    }   %>
+
+
      @Select("SELECT <%
         for(attr in myUtil.list)
         {

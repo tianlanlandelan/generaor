@@ -30,13 +30,16 @@ public class BeetlUtils {
             /*
             设置公共属性：实体类名，模块包名
              */
+
             myTemplate.setRootPath(properties.getProperty("RootPath"));
-            myTemplate.setRootPackageName(properties.getProperty("RootPackageName"));
+//            myTemplate.setRootPackageName(RootPackageName);
             myTemplate.setEntityClassName(properties.getProperty("EntityClassName"));
             myTemplate.setEntityName(properties.getProperty("EntityName"));
             myTemplate.setPackageName(properties.getProperty("PackageName"));
             myTemplate.setCollectionName(properties.getProperty("CollectionName"));
             myTemplate.setList(getMongFieldList(properties.getProperty("SqlFile")));
+
+
 
             /*
             设置Entity属性，生成Entity

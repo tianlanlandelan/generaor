@@ -24,8 +24,7 @@ public class ${myUtil.entityClassName}DaoImpl implements I${myUtil.entityClassNa
                 if(!attr.isNull){
                     if(attr.type == "String"){
                           println("        if(StringUtils.isEmpty(" + myUtil.entityName + ".get" + strutil.toUpperCase(strutil.subStringTo(attr.name,0,1)) + strutil.subString(attr.name,1) + "())) return null;");
-                    }
-                    else{
+                    }else{
                           println("        if(" + myUtil.entityName + ".get" + strutil.toUpperCase(strutil.subStringTo(attr.name,0,1)) + strutil.subString(attr.name,1) + "() == null ) return null;");
                     }
                 }

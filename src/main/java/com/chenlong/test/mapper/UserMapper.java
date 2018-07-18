@@ -17,23 +17,19 @@ public interface UserMapper {
      User getById(Integer Id);
 
 
-@Select("SELECT id, userName, phone, wxId, email, password, createTime, mask FROM " + tableName + " WHERE userName = #{userName}")
-
+     @Select("SELECT id, userName, phone, wxId, email, password, createTime, mask FROM " + tableName + " WHERE userName = #{userName}")
      User getByUserName(String userName);
 
 
-@Select("SELECT id, userName, phone, wxId, email, password, createTime, mask FROM " + tableName + " WHERE phone = #{phone}")
-
+     @Select("SELECT id, userName, phone, wxId, email, password, createTime, mask FROM " + tableName + " WHERE phone = #{phone}")
      User getByPhone(String phone);
 
 
-@Select("SELECT id, userName, phone, wxId, email, password, createTime, mask FROM " + tableName + " WHERE wxId = #{wxId}")
-
+     @Select("SELECT id, userName, phone, wxId, email, password, createTime, mask FROM " + tableName + " WHERE wxId = #{wxId}")
      User getByWxId(String wxId);
 
 
-@Select("SELECT id, userName, phone, wxId, email, password, createTime, mask FROM " + tableName + " WHERE email = #{email}")
-
+     @Select("SELECT id, userName, phone, wxId, email, password, createTime, mask FROM " + tableName + " WHERE email = #{email}")
      User getByEmail(String email);
 
 

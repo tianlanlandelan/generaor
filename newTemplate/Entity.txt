@@ -1,4 +1,4 @@
-package ${myUtil.rootPackageName}.entity;
+package ${myUtil.packageName}.entity;
 
 import java.util.Date;
 import java.util.List;

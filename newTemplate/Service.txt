@@ -1,9 +1,9 @@
-package ${myUtil.rootPackageName}.service;
+package ${myUtil.packageName}.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import ${myUtil.rootPackageName}.entity.${myUtil.entityClassName};
-import ${myUtil.rootPackageName}.mapper.${myUtil.entityClassName}Mapper;
+import ${myUtil.packageName}.entity.${myUtil.entityClassName};
+import ${myUtil.packageName}.mapper.${myUtil.entityClassName}Mapper;
 import java.util.List;
 
 @Service
@@ -26,6 +26,7 @@ public class ${myUtil.entityClassName}Service {
     public ${myUtil.entityClassName} getBy${attr.camelCaseName}(${attr.type} ${attr.name}){
         return ${myUtil.entityName}Mapper.getBy${attr.camelCaseName}(${attr.name});
     }
+
   <%    }
     }   %>
 

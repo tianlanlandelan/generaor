@@ -9,9 +9,9 @@ import java.util.List;
  */
 public class MyTemplate {
     //文件路径
-    private String  rootPath ;
+    private String  rootPath;
     //包路径
-    private String rootPackageName ;
+//    private String rootPackageName;
     //包名（模块名）
     private String packageName;
     //实体类名
@@ -34,13 +34,13 @@ public class MyTemplate {
         this.rootPath = rootPath;
     }
 
-    public String getRootPackageName() {
-        return rootPackageName;
-    }
+//    public String getRootPackageName() {
+//        return rootPackageName;
+//    }
 
-    public void setRootPackageName(String rootPackageName) {
-        this.rootPackageName = rootPackageName;
-    }
+//    public void setRootPackageName(String rootPackageName) {
+//        this.rootPackageName = rootPackageName;
+//    }
 
     public String getPackageName() {
         return packageName;

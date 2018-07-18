@@ -19,15 +19,19 @@ public class UserService {
     public User getByUserName(String userName){
         return userMapper.getByUserName(userName);
     }
+
     public User getByPhone(String phone){
         return userMapper.getByPhone(phone);
     }
+
     public User getByWxId(String wxId){
         return userMapper.getByWxId(wxId);
     }
+
     public User getByEmail(String email){
         return userMapper.getByEmail(email);
     }
+
 
 
 

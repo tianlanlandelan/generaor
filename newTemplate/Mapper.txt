@@ -6,6 +6,7 @@ import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
+import org.apache.ibatis.annotations.*;
 import java.util.List;
 
 @Mapper
@@ -76,6 +77,7 @@ public interface ${myUtil.entityClassName}Mapper {
           }
      %>)")
 
+     @Options(useGeneratedKeys = true, keyProperty = "id", keyColumn = "id")
      Integer insert(${myUtil.entityClassName} ${myUtil.entityName});
 
      @Delete("DELETE FROM " + tableName + " WHERE id = #{id}")

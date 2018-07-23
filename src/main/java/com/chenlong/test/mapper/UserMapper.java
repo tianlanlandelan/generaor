@@ -6,6 +6,7 @@ import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
+import org.apache.ibatis.annotations.*;
 import java.util.List;
 
 @Mapper
@@ -38,10 +39,12 @@ public interface UserMapper {
      List<User> getAll();
 
      @Insert("INSERT INTO " + tableName + "(id, userName, phone, wxId, email, password, createTime, mask) VALUES (#{id}, #{userName}, #{phone}, #{wxId}, #{email}, #{password}, #{createTime}, #{mask})")
+     @Options(useGeneratedKeys = true, keyProperty = "id", keyColumn = "id")
      Integer insert(User user);
 
      @Delete("DELETE FROM " + tableName + " WHERE id = #{id}")
      Integer deleteById(Integer id);
+
      @Update("UPDATE " + tableName + " SET userName=#{userName}, phone=#{phone}, wxId=#{wxId}, email=#{email}, password=#{password}, createTime=#{createTime}, mask=#{mask} WHERE id = #{id}")
      Integer update(User user);
 

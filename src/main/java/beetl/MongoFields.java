@@ -11,6 +11,15 @@ public class MongoFields {
     private boolean isNull;
     private String description;
     private Object defaultValue;
+    private boolean autoIncrement;
+
+    public boolean isAutoIncrement() {
+        return autoIncrement;
+    }
+
+    public void setAutoIncrement(boolean autoIncrement) {
+        this.autoIncrement = autoIncrement;
+    }
 
     public String getCamelCaseName() {
         return camelCaseName;

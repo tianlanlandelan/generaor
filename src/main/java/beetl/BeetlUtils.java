@@ -135,6 +135,9 @@ public class BeetlUtils {
             mongoFields.setNull((Boolean) map.get("isNull"));
             mongoFields.setIndex((Boolean)map.get("isIndex"));
             mongoFields.setDefaultValue(map.get("defaultValue"));
+            if(map.containsKey("autoIncrement")){
+                mongoFields.setAutoIncrement((Boolean)map.get("autoIncrement"));
+            }
             mongoFields.setCamelCaseName(map.get("name").toString().substring(0, 1).toUpperCase() + map.get("name").toString().substring(1));
             if(map.get("description") != null)
             mongoFields.setDescription(map.get("description").toString());

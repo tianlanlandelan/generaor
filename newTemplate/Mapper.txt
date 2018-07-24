@@ -77,8 +77,20 @@ public interface ${myUtil.entityClassName}Mapper {
           }
      %>)")
 
+<%  for(attr in myUtil.list){
+        if(attr.name == "id"){
+            if(attr.autoIncrement){   %>
      @Options(useGeneratedKeys = true, keyProperty = "id", keyColumn = "id")
+     Integer insertReturnKey(${myUtil.entityClassName} ${myUtil.entityName});
+            <%  }else{  %>
      Integer insert(${myUtil.entityClassName} ${myUtil.entityName});
+            <%  }
+        }
+        break;
+     }    %>
+
+
+
 
      @Delete("DELETE FROM " + tableName + " WHERE id = #{id}")
      Integer deleteById(<%

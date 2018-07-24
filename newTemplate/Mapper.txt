@@ -63,24 +63,32 @@ public interface ${myUtil.entityClassName}Mapper {
 
      @Insert("INSERT INTO " + tableName + "(<%
         for(attr in myUtil.list){
-            if(attrLP.last)
-                print(attr.name);
-            else
-                print(attr.name + ", ");
+            if(attr.name=="id"&&attr.autoIncrement){
+                continue;
+            }else{
+                if(attrLP.last)
+                    print(attr.name);
+                else
+                    print(attr.name + ", ");
+            }
         }
      %>) VALUES (<%
           for(attr in myUtil.list){
-              if(attrLP.last)
-                  print("#{" + attr.name + "}");
-              else
-                  print("#{" + attr.name + "}, ");
+                if(attr.name=="id"&&attr.autoIncrement){
+                    continue;
+                }else{
+                    if(attrLP.last)
+                        print("#{" + attr.name + "}");
+                    else
+                        print("#{" + attr.name + "}, ");
+                }
           }
      %>)")
 
 <%  for(attr in myUtil.list){
         if(attr.name == "id"){
             if(attr.autoIncrement){   %>
-     @Options(useGeneratedKeys = true, keyProperty = "id", keyColumn = "id")
+     @Options(useGeneratedKeys = true)
      Integer insertReturnKey(${myUtil.entityClassName} ${myUtil.entityName});
             <%  }else{  %>
      Integer insert(${myUtil.entityClassName} ${myUtil.entityName});

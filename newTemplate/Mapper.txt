@@ -89,14 +89,11 @@ public interface ${myUtil.entityClassName}Mapper {
         if(attr.name == "id"){
             if(attr.autoIncrement){   %>
      @Options(useGeneratedKeys = true)
-     Integer insertReturnKey(${myUtil.entityClassName} ${myUtil.entityName});
-            <%  }else{  %>
-     Integer insert(${myUtil.entityClassName} ${myUtil.entityName});
             <%  }
         }
         break;
      }    %>
-
+     Integer insert(${myUtil.entityClassName} ${myUtil.entityName});
 
 
 

@@ -32,7 +32,6 @@ public class BeetlUtils {
              */
 
             myTemplate.setRootPath(properties.getProperty("RootPath"));
-//            myTemplate.setRootPackageName(RootPackageName);
             myTemplate.setEntityClassName(properties.getProperty("EntityClassName"));
             myTemplate.setEntityName(properties.getProperty("EntityName"));
             myTemplate.setPackageName(properties.getProperty("PackageName"));
@@ -124,25 +123,25 @@ public class BeetlUtils {
 
     }
 
-    public static List<MongoFields> getMongFieldList(String fileName) throws Exception{
-        List<MongoFields> mongoFieldsList = new ArrayList<MongoFields>();
+    public static List<DataBaseFields> getMongFieldList(String fileName) throws Exception{
+        List<DataBaseFields> dataBaseFieldsList = new ArrayList<DataBaseFields>();
         ObjectMapper objectMapper = new ObjectMapper();
         List<Map<String,Object>> list = (List<Map<String,Object>>)objectMapper.readValue(new FileInputStream(System.getProperty("user.dir") + File.separator + "sql" + File.separator + fileName), List.class);
         for(Map<String,Object> map : list){
-            MongoFields mongoFields = new MongoFields();
-            mongoFields.setName(map.get("name").toString());
-            mongoFields.setType(map.get("type").toString());
-            mongoFields.setNull((Boolean) map.get("isNull"));
-            mongoFields.setIndex((Boolean)map.get("isIndex"));
-            mongoFields.setDefaultValue(map.get("defaultValue"));
+            DataBaseFields dataBaseFields = new DataBaseFields();
+            dataBaseFields.setName(map.get("name").toString());
+            dataBaseFields.setType(map.get("type").toString());
+            dataBaseFields.setNull((Boolean) map.get("isNull"));
+            dataBaseFields.setIndex((Boolean)map.get("isIndex"));
+            dataBaseFields.setDefaultValue(map.get("defaultValue"));
             if(map.containsKey("autoIncrement")){
-                mongoFields.setAutoIncrement((Boolean)map.get("autoIncrement"));
+                dataBaseFields.setAutoIncrement((Boolean)map.get("autoIncrement"));
             }
-            mongoFields.setCamelCaseName(map.get("name").toString().substring(0, 1).toUpperCase() + map.get("name").toString().substring(1));
+            dataBaseFields.setCamelCaseName(map.get("name").toString().substring(0, 1).toUpperCase() + map.get("name").toString().substring(1));
             if(map.get("description") != null)
-            mongoFields.setDescription(map.get("description").toString());
-            mongoFieldsList.add(mongoFields);
+            dataBaseFields.setDescription(map.get("description").toString());
+            dataBaseFieldsList.add(dataBaseFields);
         }
-        return mongoFieldsList;
+        return dataBaseFieldsList;
     }
 }

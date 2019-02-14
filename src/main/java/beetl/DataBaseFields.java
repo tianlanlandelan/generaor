@@ -3,7 +3,7 @@ package beetl;
 /**
  * Created by yangkaile on 2017/4/10.
  */
-public class MongoFields {
+public class DataBaseFields {
     private String name;
     private String camelCaseName;               //驼峰命名
     private String type;
@@ -79,7 +79,7 @@ public class MongoFields {
 
     @Override
     public String toString() {
-        return "MongoFields{" +
+        return "DataBaseFields{" +
                 "name='" + name + '\'' +
                 ", type='" + type + '\'' +
                 ", isIndex=" + isIndex +

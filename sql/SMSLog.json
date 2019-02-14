@@ -1,0 +1,67 @@
+[
+  {
+    "name":"id",
+    "type":"Integer",
+    "isIndex":true,
+    "isNull":false,
+    "autoIncrement":true,
+    "defaultValue":null,
+    "description":"id"
+  },{
+  "name":"phone",
+  "type":"String",
+  "isIndex":true,
+  "isNull":true,
+  "defaultValue":null,
+  "description":"用户ID"
+},{
+  "name":"type",
+  "type":"Integer",
+  "isIndex":true,
+  "isNull":false,
+  "defaultValue":null,
+  "description":"类型"
+},{
+  "name":"templateId",
+  "type":"String",
+  "isIndex":false,
+  "isNull":false,
+  "defaultValue":null,
+  "description":"短信模板ID"
+},{
+  "name":"codeStr",
+  "type":"String",
+  "isIndex":false,
+  "isNull":false,
+  "defaultValue":null,
+  "description":"验证码"
+},{
+  "name":"minuteStr",
+  "type":"String",
+  "isIndex":false,
+  "isNull":false,
+  "defaultValue":null,
+  "description":"有效时间"
+},{
+  "name":"result",
+  "type":"String",
+  "isIndex":false,
+  "isNull":false,
+  "defaultValue":null,
+  "description":"返回结果"
+},{
+  "name":"stateCode",
+  "type":"String",
+  "isIndex":false,
+  "isNull":false,
+  "defaultValue":null,
+  "description":"返回码"
+},{
+  "name":"createTime",
+  "type":"Date",
+  "isIndex":false,
+  "isNull":false,
+  "defaultValue":"new Date()",
+  "description":"时间"
+}
+]

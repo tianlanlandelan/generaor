@@ -1,0 +1,53 @@
+[
+  {
+    "name":"id",
+    "type":"Integer",
+    "isIndex":true,
+    "isNull":false,
+    "autoIncrement":true,
+    "defaultValue":null,
+    "description":"id"
+  },{
+  "name":"userId",
+  "type":"Integer",
+  "isIndex":true,
+  "isNull":true,
+  "defaultValue":null,
+  "description":"用户ID"
+},{
+  "name":"type",
+  "type":"Integer",
+  "isIndex":true,
+  "isNull":false,
+  "defaultValue":null,
+  "description":"登录类型 0:登录 1:登出"
+},{
+  "name":"way",
+  "type":"Integer",
+  "isIndex":false,
+  "isNull":false,
+  "defaultValue":null,
+  "description":"登录方式 0:用户名登录 1:手机号登录 2:邮箱登录"
+},{
+  "name":"ip",
+  "type":"String",
+  "isIndex":false,
+  "isNull":false,
+  "defaultValue":null,
+  "description":"IP"
+},{
+  "name":"deviceId",
+  "type":"String",
+  "isIndex":false,
+  "isNull":false,
+  "defaultValue":null,
+  "description":"设备ID"
+},{
+  "name":"createTime",
+  "type":"Date",
+  "isIndex":false,
+  "isNull":false,
+  "defaultValue":"new Date()",
+  "description":"时间"
+}
+]

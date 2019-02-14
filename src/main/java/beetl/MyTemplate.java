@@ -24,7 +24,7 @@ public class MyTemplate {
     private String packageMapPath;
 
     private String collectionName;
-    private List<MongoFields> list = new ArrayList<MongoFields>();
+    private List<DataBaseFields> list = new ArrayList<DataBaseFields>();
 
     public String getRootPath() {
         return rootPath;
@@ -102,11 +102,11 @@ public class MyTemplate {
         this.collectionName = collectionName;
     }
 
-    public List<MongoFields> getList() {
+    public List<DataBaseFields> getList() {
         return list;
     }
 
-    public void setList(List<MongoFields> list) {
+    public void setList(List<DataBaseFields> list) {
         this.list = list;
     }
 }

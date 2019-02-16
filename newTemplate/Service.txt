@@ -1,6 +1,6 @@
 package ${myUtil.packageName}.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import javax.annotation.Resource;
 import org.springframework.stereotype.Service;
 import ${myUtil.packageName}.entity.${myUtil.entityClassName};
 import ${myUtil.packageName}.mapper.${myUtil.entityClassName}Mapper;
@@ -8,7 +8,7 @@ import java.util.List;
 
 @Service
 public class ${myUtil.entityClassName}Service {
-    @Autowired
+    @Resource
     private ${myUtil.entityClassName}Mapper ${myUtil.entityName}Mapper;
 
     public ${myUtil.entityClassName} getById(<%
@@ -29,8 +29,6 @@ public class ${myUtil.entityClassName}Service {
 
   <%    }
     }   %>
-
-
 
     public List<${myUtil.entityClassName}> getAll(){
         return ${myUtil.entityName}Mapper.getAll();
@@ -53,6 +51,5 @@ public class ${myUtil.entityClassName}Service {
     public Integer update(${myUtil.entityClassName} ${myUtil.entityName}){
         return ${myUtil.entityName}Mapper.update(${myUtil.entityName});
     }
-
 
 }

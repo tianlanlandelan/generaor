@@ -28,7 +28,6 @@ public class ${myUtil.entityClassName} {
     }
 %>
 
-
 @Override
     public String toString() {
         return "${myUtil.entityClassName}{" +

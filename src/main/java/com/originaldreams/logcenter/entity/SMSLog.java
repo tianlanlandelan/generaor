@@ -95,7 +95,6 @@ public class SMSLog {
            this.createTime = createTime;
      }
 
-
 @Override
     public String toString() {
         return "SMSLog{" +

@@ -40,13 +40,8 @@ public class ${myUtil.entityClassName}Controller {
         ${myUtil.entityClassName} result = ${myUtil.entityName}Service.getBy${attr.camelCaseName}(${attr.name});
         return ResponseEntity.ok().contentType(MediaType.APPLICATION_JSON).body(result);
     }
-
-
    <%   }
     } %>
-
-
-
 
     @RequestMapping(value = "/getAll",method = RequestMethod.GET)
     ResponseEntity getAll(){

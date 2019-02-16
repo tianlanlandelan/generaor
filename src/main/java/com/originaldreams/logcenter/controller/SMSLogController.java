@@ -32,18 +32,11 @@ public class SMSLogController {
         SMSLog result = smsLogService.getByPhone(phone);
         return ResponseEntity.ok().contentType(MediaType.APPLICATION_JSON).body(result);
     }
-
-
     @RequestMapping(value = "/getByType",method = RequestMethod.GET)
     ResponseEntity getByType(Integer type){
         SMSLog result = smsLogService.getByType(type);
         return ResponseEntity.ok().contentType(MediaType.APPLICATION_JSON).body(result);
     }
-
-
-
-
-
 
     @RequestMapping(value = "/getAll",method = RequestMethod.GET)
     ResponseEntity getAll(){

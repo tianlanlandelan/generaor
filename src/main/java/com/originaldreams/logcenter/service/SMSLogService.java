@@ -1,6 +1,6 @@
 package com.originaldreams.logcenter.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import javax.annotation.Resource;
 import org.springframework.stereotype.Service;
 import com.originaldreams.logcenter.entity.SMSLog;
 import com.originaldreams.logcenter.mapper.SMSLogMapper;
@@ -8,7 +8,7 @@ import java.util.List;
 
 @Service
 public class SMSLogService {
-    @Autowired
+    @Resource
     private SMSLogMapper smsLogMapper;
 
     public SMSLog getById(Integer id){
@@ -23,8 +23,6 @@ public class SMSLogService {
     public SMSLog getByType(Integer type){
         return smsLogMapper.getByType(type);
     }
-
-
 
 
     public List<SMSLog> getAll(){
@@ -42,6 +40,5 @@ public class SMSLogService {
     public Integer update(SMSLog smsLog){
         return smsLogMapper.update(smsLog);
     }
-
 
 }

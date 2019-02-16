@@ -5,22 +5,33 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by lanli on 2017/4/6.
+ * Created by yangkaile on 2017/4/6.
  */
 public class MyTemplate {
-    //文件路径
+    /**
+     * 文件路径
+     */
     private String  rootPath;
-    //包路径
-//    private String rootPackageName;
-    //包名（模块名）
+    /**
+     * 包名（模块名）
+     */
     private String packageName;
-    //实体类名
+    /**
+     * 实体类名
+     */
     private String entityClassName;
-    //实体对象名
+    /**
+     * 实体对象名
+     */
     private String entityName;
-    //模板名称
+    /**
+     * 模板名称
+     *
+     */
     private String templateName;
-    //Controller RequestMapping
+    /**
+     * Controller RequestMapping
+     */
     private String packageMapPath;
 
     private String collectionName;
@@ -34,13 +45,6 @@ public class MyTemplate {
         this.rootPath = rootPath;
     }
 
-//    public String getRootPackageName() {
-//        return rootPackageName;
-//    }
-
-//    public void setRootPackageName(String rootPackageName) {
-//        this.rootPackageName = rootPackageName;
-//    }
 
     public String getPackageName() {
         return packageName;

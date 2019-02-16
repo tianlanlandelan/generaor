@@ -13,7 +13,6 @@ import java.util.List;
 public interface SMSLogMapper {
     String tableName = "sms_log";
 
-
      @Select("SELECT id, phone, type, templateId, codeStr, minuteStr, result, stateCode, createTime FROM " + tableName + " WHERE id = #{id}")
      SMSLog getById(Integer Id);
 
@@ -26,7 +25,6 @@ public interface SMSLogMapper {
      SMSLog getByType(Integer type);
 
 
-
      @Select("SELECT id, phone, type, templateId, codeStr, minuteStr, result, stateCode, createTime FROM " + tableName)
      List<SMSLog> getAll();
 
@@ -34,11 +32,8 @@ public interface SMSLogMapper {
      @Options(useGeneratedKeys = true)
      Integer insert(SMSLog smsLog);
 
-
-
      @Delete("DELETE FROM " + tableName + " WHERE id = #{id}")
      Integer deleteById(Integer id);
-
      @Update("UPDATE " + tableName + " SET phone=#{phone}, type=#{type}, templateId=#{templateId}, codeStr=#{codeStr}, minuteStr=#{minuteStr}, result=#{result}, stateCode=#{stateCode}, createTime=#{createTime} WHERE id = #{id}")
      Integer update(SMSLog smsLog);
 
